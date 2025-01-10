@@ -1,0 +1,21 @@
+<%#= render(CourseComponent.new(course: Course.find(1))) %>
+
+<%#= render(CourseComponent.new(course: Course.find(1))) do %>
+  <%# container %>
+<%# end %>
+<%# New %>
+<%#= render(CourseComponent.new(course: Course.find(1)).with_content("container")) %>
+
+
+All
+<%= render(CourseComponent.with_collection(Course.all, notice: "Buy Me")) %>
+
+<% course_titles = Course.all.pluck(:title).map { |title| {title: title}} %>
+
+<%= render ListComponent.new do |c| %>
+  <% c.with_header do %>
+    <%= link_to "List of Available Courses", root_path %>
+  <% end %>
+  
+  <%= c.with_titles(course_titles) %>
+<% end %>

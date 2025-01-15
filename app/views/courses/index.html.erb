@@ -5,9 +5,7 @@
 <%# end %>
 <%# New %>
 <%#= render(CourseComponent.new(course: Course.find(1)).with_content("container")) %>
-
-
-All
+<div class="container flex flex-col">
 <%= render(CourseComponent.with_collection(Course.all, notice: "Buy Me")) %>
 
 <% course_titles = Course.all.pluck(:title).map { |title| {title: title}} %>
@@ -19,3 +17,4 @@ All
   
   <%= c.with_titles(course_titles) %>
 <% end %>
+</div>

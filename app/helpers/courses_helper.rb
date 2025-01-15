@@ -5,6 +5,6 @@ module CoursesHelper
   end
 
   def star_icon
-    image_tag("star.png", width: "5%")
+    image_tag("star.png", width: "1%")
   end
 end

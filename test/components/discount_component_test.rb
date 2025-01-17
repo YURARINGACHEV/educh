@@ -7,7 +7,7 @@ class DiscountComponentTest < ViewComponent::TestCase
   def test_render_component
     course = Course.create(title: 'Organizing your Time', price: 155.00, location: 'London')
     render_inline(DiscountComponent.new(item: course))
-    assert_selector 'p[class="green"]'
+    assert_selector 'p[class="text-green-900"]'
     assert_text "10% discount"
   end
 

@@ -22,7 +22,7 @@ export default class extends Controller {
       .then(html => this.element.innerHTML = html)
   }
 
-  loader({ params }) {
+  loading({ params }) {
     console.log(params)
     fetch(params.url)
       .then(response => response.text())
